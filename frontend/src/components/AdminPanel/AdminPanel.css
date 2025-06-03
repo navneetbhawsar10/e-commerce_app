@@ -1,0 +1,103 @@
+.adminContainer{
+    width: inherit;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-content: start;
+}
+
+.adminContainer .divTable{
+    width: 800px;
+}
+.updatebtn{
+    background: linear-gradient(90deg,blue,rgb(111, 111, 223));
+    width: 50px;
+    height: 20px;
+    padding: 2px;
+    color: azure;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.btndiv{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.searchbar{
+    position: sticky;
+    top:0;
+  opacity: 1;
+  width: 30%;
+  padding: 20px;
+  border-radius: 25px;
+  border: 1.5px solid rgb(0, 0, 3);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+ margin: 5px;
+ margin-top: 50px;
+ margin-left: 450px;
+}
+
+.input-fields{
+     outline: none;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid gray;
+    text-align: center;
+}
+.updatecontainer{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.update-from{
+    width: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+  .update_btn {
+    padding: 10px;
+    width: 100px;
+     background:linear-gradient(90deg,rgb(0, 0, 3),rgb(2, 2, 51),rgb(24, 24, 25));
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .uploadbtn{
+    height: 50px;
+    padding: 5px;
+    background: linear-gradient(90deg,green,rgb(90, 240, 90));
+    font-weight: bold;
+    color: white;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  .del-btn{
+    height: 50px;
+    padding: 5px;
+    background: linear-gradient(90deg,rgb(71, 3, 3),rgb(218, 13, 13));
+    font-weight: bold;
+    color: white;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+
+  .btndiv2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: inherit;
+    align-items: center;
+  }

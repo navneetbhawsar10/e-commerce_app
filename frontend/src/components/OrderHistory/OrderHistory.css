@@ -1,0 +1,58 @@
+.orderCotainer{
+    width: inherit;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.head12{
+  width: 99%;
+  height: 50px;
+  padding-top: 5px;
+  color: white;
+  margin: 10px;
+ background: linear-gradient(to right, rgb(2, 2, 77), rgb(70, 130, 180));
+font-size: 30px;
+}
+
+.orderdetails{
+    width: 50%;
+     background-color: rgb(224, 179, 121);
+     text-align: center;
+     padding: 20px;
+     border-bottom: 20px solid white;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+}
+
+table tr{
+    height: 50px;
+}
+
+table td{
+    border-bottom: 1px solid white;
+}
+
+table thead tr{
+    background-color: black;
+    color: white;
+}
+
+.downdiv{
+    text-align: start;
+}
+
+.date-filters{
+    padding: 5px;
+    margin: 5px;
+    height: 50px;
+}
+
+input{
+    height: 20px;
+}

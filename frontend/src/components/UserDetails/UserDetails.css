@@ -1,0 +1,108 @@
+.userDetailsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+.box{
+    width: 50%;
+    height: 300px;
+    display:flex ;
+    flex-direction: row;
+    justify-content: center;
+    height: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.image{
+    height: 200px;
+}
+
+.details{
+    margin-top: 100px;
+    
+}
+
+.details table tr td{
+   border: 1px solid black;
+}
+
+.edit-btn{
+    font-weight: bold;
+    padding: 5px;
+    background: linear-gradient(90deg,rgb(171, 8, 8),rgb(243, 98, 98));
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 2px;
+    height: 40px;
+}
+.action-btn{
+    font-weight: bold;
+    padding: 5px;
+    background:linear-gradient(90deg,rgb(136, 165, 136),green);
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 2px;
+    height: 40px;
+}
+
+.action-btn:hover , .edit-btn:hover{
+    opacity: 0.8;
+}
+
+.userInfo{
+  width: 30%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-left: 20px;
+}
+
+.detailsForm{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.detailsForm input{
+  margin: 5px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.okbtn{
+    margin-left: 2px;
+    padding: 5px;
+    width: 40px;
+    background-color: rgb(55, 55, 168);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.removebtn{
+    background-color: blue;
+    color: white;
+    padding: 2px;
+    border-radius: 40%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+  .invalid-field{
+    outline: none;
+     width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid red;
+    border-radius: 4px;
+  }
+
+  .input-field {
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,9 @@
+.Add_btn{
+     padding: 10px;
+    width: 100px;
+     background:linear-gradient(90deg,rgb(3, 59, 3),rgb(2, 193, 2));
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}

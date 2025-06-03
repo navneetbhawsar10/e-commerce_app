@@ -1,0 +1,14 @@
+.header12 {
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  width: 30%;
+  padding: 20px;
+  border-radius: 25px;
+  border: 1.5px solid rgb(0, 0, 3);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+ margin: 5px;
+ margin-left: 450px;
+}

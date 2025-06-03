@@ -1,0 +1,119 @@
+.cartContainer{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    justify-content: space-evenly
+}
+
+.divTable{
+   width: 50%;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}   
+
+.itemTable{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgb(224, 179, 121);
+    gap: 5px;
+    padding: 0;
+}
+
+
+
+.carthead{
+    background:linear-gradient(90deg,rgb(0, 0, 3),rgb(2, 2, 77));
+    color:rgb(224, 179, 121);
+    font-size: 30px;
+    padding: 10px;
+}
+
+.total{
+    width: 30%;
+    height: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actionButton{
+    background: linear-gradient(90deg,rgb(64, 5, 5),red);
+    width: 50px;
+    height: 20px;
+    padding: 2px;
+    color: azure;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.totalhead{
+     background:linear-gradient(90deg,rgb(0, 0, 3),rgb(2, 2, 77));
+    color:rgb(224, 179, 121);
+    font-size: 30px;
+    padding: 10px;
+}
+
+.totalTable{
+    width: 80%;
+    background-color: rgb(224, 179, 121);
+    margin: 20px;
+}
+
+.btndiv{
+    width: 80%;
+    margin-left: 20px;
+}
+
+.checkbtn{
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(90deg,green,rgb(5, 208, 5));
+    padding: 2px;
+    color: azure;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.shopbtn{
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    background: linear-gradient(90deg,rgb(24, 1, 24),violet);
+    padding: 2px;
+    color: azure;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.emptynote{
+    color: rgb(133, 126, 133);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.productRow td{
+    border-bottom: 1px solid white;
+}
+
+.headRow th{
+    border-bottom: 1px solid white;
+}
+
+.fa{
+    background-color: white;
+}
+
+.fa:hover, .actionButton:hover, .checkbtn:hover, .shopbtn:hover{
+    cursor: pointer;
+}
+
+.totalTable td{
+    height: 30px;
+    border-bottom: 1px solid black;
+}
+
