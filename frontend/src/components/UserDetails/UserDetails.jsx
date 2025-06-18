@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import './UserDetails.css'
 import { toast } from 'react-toastify';
 
@@ -89,9 +89,9 @@ function UserDetails() {
     function submit(){
        const updatedData = {
         ...data,
-    image: data.image || user.image,
-    email:data.email||user.email,
-    name:data.name||user.name
+    image: !data.image?user.image:data.image,
+    email:!data.email?user.email:data.email,
+    name:!data.name?user.name:data.name
   };
 
         axios.put(`http://127.0.0.1:7000/user_api/user/${id}`,updatedData).then(()=>{
@@ -130,7 +130,7 @@ function UserDetails() {
     <div className='userDetailsContainer'>
     <div className="box">
         <div className="image">
-           <img width={400} height={300} src={user.image} /><br/>
+           <img width={400} height={270} src={user.image} /><br/>
 
            {
             user.image!='https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg'
@@ -150,7 +150,8 @@ function UserDetails() {
            <tr><td><strong>Role:</strong>Admin </td></tr>
           }
           </tbody>
-        </table> <br/>
+        </table>
+        <Link to={`/resetPassword/${user._id}`}>Reset Password</Link><br/>
          <button onClick={()=>setShow(true)} className='edit-btn'>Edit Profile</button>
          {user.role=="Admin"&&<button onClick={()=>navigate('/AdminPanel')} className='action-btn'>Admin Actions</button>}
         </div>

@@ -12,7 +12,7 @@
 }   
 
 .itemTable{
-    width: 100%;
+    width: 99%;
     margin-top: 20px;
     text-align: center;
     background-color: rgb(224, 179, 121);
@@ -31,7 +31,7 @@
 
 .total{
     width: 30%;
-    height: 250px;
+    height: 350px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
@@ -81,7 +81,6 @@
 .shopbtn{
     width: 100px;
     height: 30px;
-    margin-left: 5px;
     background: linear-gradient(90deg,rgb(24, 1, 24),violet);
     padding: 2px;
     color: azure;

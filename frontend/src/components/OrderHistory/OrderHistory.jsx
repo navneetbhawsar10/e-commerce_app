@@ -9,9 +9,10 @@ import { useContext } from 'react'
 function OrderHistory() {
 
 const [ordersData,setOrders] = useState([])
-const user = JSON.parse(localStorage.getItem('user'))
+const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : ''
 const [toDate,setToDate] = useState('')
 const [fromDate,setFromDate] = useState('')
+const [allOrders,setAllorders] = useState([])
 const isAdmin = user.role=="Admin"
 const visibleData = isAdmin?ordersData:ordersData.filter(i=>i.customer_name==user.name)
 
@@ -19,6 +20,7 @@ const visibleData = isAdmin?ordersData:ordersData.filter(i=>i.customer_name==use
 useEffect(()=>{
   axios.get('http://127.0.0.1:7000/order_api/orders').then((res)=>{
     setOrders(res.data.orders)
+    setAllorders(res.data.orders)
     })
 
   .catch((error)=>{
@@ -27,11 +29,16 @@ useEffect(()=>{
   })
 },[])
 
-
+function Search(text){
+  if(text=='') setOrders(allOrders)
+  const sorted = allOrders.filter((i)=>i.customer_name.toLowerCase().includes(text.toLowerCase()))
+   setOrders(sorted)  
+}
 
   return (
     <>
     <header className='head12'>Order History</header>
+    <input onChange={(e)=>Search(e.target.value)} className="header12" placeholder='Search by customer name...'/>
     <div className='orderCotainer'>
         <div className="date-filters">
          <label>

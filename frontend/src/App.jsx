@@ -19,7 +19,10 @@ import UserDetails from './components/UserDetails/UserDetails'
 import AdminPanel from './components/AdminPanel/AdminPanel'
 import UploadProduct from './components/UploadProduct/UploadProduct'
 import Checkout from './components/Checkout/Checkout'
-import OrderHistory from './components/orderHistory/orderHistory'
+import OrderHistory from './components/OrderHistory/OrderHistory'
+import ResetPass from './components/ResetPass/ResetPass'
+import CheckLogin from './components/CheckLogin/CheckLogin'
+
 
 
 function App() {
@@ -37,12 +40,16 @@ function App() {
           <Route path='/MensWear' element={<MensWear/>}/>
           <Route path='/WomensWear' element={<WomensWear/>}/>
           <Route path='/KidsWear' element={<KidsWear/>}/>
-          <Route path='/Cart' element={<Cart/>}/>
-          <Route path='/UserDetails/:id' element={<UserDetails/>}/>
-          <Route path='/AdminPanel' element={<AdminPanel/>}/>
-          <Route path='/UploadProduct' element={<UploadProduct/>}/>
-          <Route path='/Checkout' element={<Checkout/>}/>
-          <Route path='/orderHistory' element={<OrderHistory/>}/>
+           <Route path='/resetPassword/:id' element={<ResetPass/>}/>
+
+          <Route element={<CheckLogin/>}>
+           <Route path='/Cart' element={<Cart/>}/>
+           <Route path='/UserDetails/:id' element={<UserDetails/>}/>
+           <Route path='/AdminPanel' element={<AdminPanel/>}/>
+           <Route path='/UploadProduct' element={<UploadProduct/>}/>
+           <Route path='/Checkout' element={<Checkout/>}/>
+           <Route path='/orderHistory' element={<OrderHistory/>}/>
+          </Route>
        </Routes>
     </Router>
     <ToastContainer position="bottom-right" />

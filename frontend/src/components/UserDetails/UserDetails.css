@@ -13,10 +13,16 @@
     justify-content: center;
     height: 400px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding-top: 10px;
 }
 
 .image{
-    height: 200px;
+    height: 200px;;
+}
+.image img{
+    border-radius: 10%;
+    margin-top: 70px;
+    margin-right: 5px;
 }
 
 .details{

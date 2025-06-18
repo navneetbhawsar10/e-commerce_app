@@ -12,9 +12,8 @@ const userSchema = new mongoose.Schema({
      pincode: { type: String,default:'' },
     city: { type: String ,default:''},
     country: { type: String ,default:''}
-        }
-
-},{timestamps:true})
+        }  
+    },{timestamps:true})
 
 userSchema.methods.matchPassword = async function(enteredpassword) {
      return await bcrypt.compare(enteredpassword,this.password)

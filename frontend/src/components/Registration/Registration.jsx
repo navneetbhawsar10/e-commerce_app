@@ -11,12 +11,16 @@ function Registration() {
   const [nameisvalid,setnameisValid] = useState(true)
   const [emailisvalid,setemailisValid] = useState(true)
   const [confirmpasswordisvalid,setconfirmpasswordisValid] = useState(true)
+  const[verification,setVerification] = useState(false)
+  const [loading,setLoading] =  useState(false)
+  const [count,setCount] = useState(30)
   const [state,setState] =  useState({
     user:{
       name:'',
       email:'',
       image:'',
       password:'',
+      otp:''
     }
   })
 
@@ -84,20 +88,19 @@ let convertBase64String = (imageFile) => {
        }
        else
        {
-         e.preventDefault();
+         setLoading(true)
         let dataURL = 'http://127.0.0.1:7000/user_api/users';
         
         axios.post(dataURL , state.user).then((res) => {
-        toast.success(`Registered successfully`)
-        navigate('/login')
-        setState({
-          user:{
-            name:'',
-            email:'',
-            password:'',
-            image:''
+          if(res.data.msg=='user exists'){
+           toast.warn(res.data.msg)
+           setLoading(false)
           }
-        })
+          else{
+             toast.success(`an otp has been sent to your email`)
+             setLoading(false)
+              setVerification(true)
+          }  
         
         }).catch((error) => {
           toast.error('registration failed')
@@ -117,18 +120,38 @@ let convertBase64String = (imageFile) => {
       setconfirmpasswordisValid(false)
     }
 
+    function verify(){
+      setLoading(true)
+      axios.post('http://127.0.0.1:7000/user_api/verify',state.user)
+      .then((res)=>{
+         if(res.data.msg==='Verification successful'){
+           toast.success(res.data.msg) 
+            navigate('./Login')
+         }
+          else{
+           setLoading(false)
+          toast.error(res.data.msg)
+          }
+        })
+        .catch((error)=>{
+          console.log(error);
+          
+        })
+
+    }
+
 
   return (
     <>
-    <div>
-      <div className="login-container">
-        <header className="header">
+    <header className="header">
           <span className="login-icon">
 
             <i class="fa-solid fa-user" ></i>
           </span>
           Register Here
         </header>
+    <div className='ragistrationbox'>
+      <div className="login-container">
         <div className="login-box">
           <div className="login1">
             <h2>Register</h2>
@@ -152,21 +175,26 @@ let convertBase64String = (imageFile) => {
             />
             <input onChange={updateImage} type='file' className='input-field' /> 
 
-            <button onClick={onSubmit} className="login-button">Register</button>
+            <button onClick={onSubmit} className="login-button">{loading?<>...</>:<>Ragister</>}</button>
           </div>
 
           <p className="register-text">
-            Already have an account ?
+            Already have an account ? </p>
             <p className="register-link">
               <Link to={'/Login'}>
               Login
               </Link>
             </p>
-            
-          </p>
           <div className="footer-logo">BRAINSKART</div>
         </div>
       </div>
+      {  verification&&
+      <div className='otpbox'>
+        <header className='header'>Email Verfication</header>
+          <input onChange={update} name='otp' type="text" placeholder="Enter OTP" /><br/>
+          <button onClick={verify} className='verifybtn'>{loading?<>verifying..</>:<>Verify</>}</button><br/>
+      </div> 
+         }
     </div>
     </>
   )

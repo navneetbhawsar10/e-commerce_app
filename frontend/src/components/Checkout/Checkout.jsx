@@ -10,8 +10,10 @@ import { useNavigate } from 'react-router'
 
 function Checkout() {
     const[edit,setEdit] = useState(false)
+    const[id,setId] = useState('')
     const navigate = useNavigate()
     const {user,cartItems,grandTotal,setUser} = useContext(CartContext)
+    const[loading,setLoading] = useState(false)
     const[state,setState] = useState({
         address:{
             street:'',
@@ -22,7 +24,8 @@ function Checkout() {
     })
 
 useEffect(()=>{
-     let id = JSON.parse(localStorage.getItem('user'))._id
+
+       let id = localStorage.getItem('user') ? (JSON.parse(localStorage.getItem('user'))._id):''
       axios.get(`http://127.0.0.1:7000/user_api/user/${id}`).then((res)=>{
         setUser(res.data)  
         })
@@ -76,6 +79,7 @@ const getPaymentDetails =  async(res)=> {
    };
 
     const handlePayment = async (totalAmount) => {
+      setLoading(true)
     const res = await loadRazorpayScript();
     
     if (!res) {
@@ -251,7 +255,7 @@ const getPaymentDetails =  async(res)=> {
         </tbody>
         </table>
         <strong>Total Amount:</strong>{grandTotal}<br/>
-        <button className='paymentbtn' onClick={()=>handlePayment(grandTotal)}>Make Payment</button>
+        <button className='paymentbtn' onClick={()=>handlePayment(grandTotal)}>{!loading?<>Make Payment</>:<>loading..</>}</button>
           </div>
         </div>
     

@@ -1,5 +1,7 @@
 .login-container {
     text-align: center;
+    display: flex;
+    flex-direction: row;
   }
   
   .header {
@@ -78,4 +80,14 @@
     color: white;
     padding: 15px;
     
+  }
+
+  .forgetbox{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-right: 500px;
+    gap: 10px;
   }
