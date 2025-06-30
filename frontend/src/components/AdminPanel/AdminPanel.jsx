@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './AdminPanel.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 function AdminPanel() {
     const[products,setProducts]=useState([])
@@ -21,6 +21,16 @@ function AdminPanel() {
       }
      
     })
+
+    let user = JSON.parse(localStorage.getItem('user'))
+    let navigate = useNavigate()
+    if(!user||user.role!='admin'){
+      return(
+        <>
+          {navigate('/')}
+        </>
+      )
+    }
 
     function getAllProduct(){
       axios.get('http://127.0.0.1:7000/api/products').then((res)=>{
@@ -137,7 +147,6 @@ function deleteaAllProduct(){
     
   })
 }
-
   return (
     <>
       <header className="header1">
